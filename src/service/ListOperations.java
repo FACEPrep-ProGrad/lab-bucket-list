@@ -28,11 +28,11 @@ public class ListOperations{
 	}
 	
 	
-//	public Object sortByRank(List<TouristPlace> places) {
-//		Collections.sort(places.get(2), Comparator.naturalOrder());
-//		return places;
-//	
-//	}
+	public Object sortByRank(List<TouristPlace> places) {
+		Collections.sort(places.get(2), Comparator.naturalOrder());
+		return places;
+	
+	}
 	
 	public Object sortByRank(List<TouristPlace> places) {
 		Comparator<TouristPlace> place = new Comparator<TouristPlace>() {
