@@ -1,4 +1,4 @@
-<%@page import="model.TouristPlace"%>
+
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page language="java" contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,6 +12,9 @@
 <link rel="stylesheet" type="text/css" href="./assets/collection.css" />
 </head>
 <body>
+
+
+
 	<form action="${pageContext.request.contextPath}/set" method="post">
 		<div class="form-group">
 			<div class="list">
