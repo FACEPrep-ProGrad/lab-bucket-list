@@ -22,10 +22,14 @@
 				<label id="rank-id" for="rank">Rank</label> 
 				<input type="text" class="form-text" id="rank" placeholder="Rank" name="rank">
 			   	<button class="button" type="submit" value="ADDITEM" name="add">ADD TO BUCKET LIST</button> 
-				<label id="sort-id" for="sort">Sort by Destination </label>
+				
+				<!--  <label id="sort-id" for="sort">Sort by Destination </label>
 				<input id="sort" type="checkbox" value="sort by destination" name="sortbydestination">
 				<label id="sort-rank-id" for="sortbyrank">Sort by Rank </label>
 				<input id="sortbyrank" type="checkbox" value="Sort by rank" name="sortbyrank">
+				 -->
+				 <button style="width:200px; height:30px;margin-left: 850px; margin-top: 408px;position: absolute;" type="submit" value="sortbydestination" name="sortbydestination">SORT BY DESTINATION</button>
+				<button style="width:200px; height:30px;margin-left: 1100px;position: absolute;margin-top: 408px;" type="submit" value="sortbyrank" name="sortbyrank">SORT BY RANK</button>
 				<button class="button-reset" type="submit" value="reset" name="reset">RESET MY BUCKET LIST</button>
 				<button class="button-delete" type="submit" value="delete" name="remove">DELETE MY LAST ENTRY</button> 
 			</div>
