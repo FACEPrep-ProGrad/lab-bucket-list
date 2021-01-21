@@ -26,7 +26,7 @@
 				
 				<button class="button" type="submit" value="ADDITEM" name="add">ADD	TO BUCKET LIST</button>
 				
-				<label id="sort-random-id" for="sort">Sort Randomly </label> 
+				<!--  <label id="sort-random-id" for="sort">Sort Randomly </label> 
 				<input id="sort-random" type="checkbox" value="sort randomly"	name="sortrandomly"> 
 				
 				<label id="sort-entry-id" for="sortbyrank">Sort in entry order </label> 
@@ -34,6 +34,10 @@
 				
 				<label id="sort-alphabet-id" for="sortalphabetically">Sort Alphabettically </label> 
 				<input id="sort-alphabet"	type="checkbox" value="sort in entry order" name="sortalphabetically">
+				-->
+				<button style="width:200px; height:30px;margin-left: 600px; margin-top: 408px;position: absolute;" type="submit" value="sortinentryorder" name="sortinentryorder">SORT BY ENTRY ORDER</button>
+				<button style="width:200px; height:30px;margin-left: 850px; margin-top: 408px;position: absolute;" type="submit" value="sortrandomly" name="sortrandomly">SORT RANDOMLY</button>
+				<button style="width:200px; height:30px;margin-left: 1100px;position: absolute;margin-top: 408px;" type="submit" value="sortalphabetically" name="sortalphabetically">SORT ALPHABETICALLY</button>
 				
 				<button class="button-reset" type="submit" value="reset" name="reset">RESET MY BUCKET LIST</button>
 				<button class="button-delete" type="submit" value="delete" name="remove">DELETE MY LAST ENTRY</button>

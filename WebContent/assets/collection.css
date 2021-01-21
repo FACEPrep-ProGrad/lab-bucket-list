@@ -176,8 +176,8 @@ td {
 
 #sort {
 	position: absolute;
-	width: 11px;
-	height: 11px;
+	width: 200px;
+	height: 50px;
 	margin-left: 1052px;
 	margin-top: 408px;
 	z-index: 9;
@@ -205,8 +205,8 @@ td {
 
 #sortbyrank {
 	position: absolute;
-	width: 15px;
-	height: 15px;
+	width: 200px;
+	height: 50px;
 	margin-left: 1227px;
 	margin-top: 406px;
 	z-index: 9; background : #FFFFFF;
