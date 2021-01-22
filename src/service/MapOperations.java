@@ -1,9 +1,8 @@
 package service;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
+import java.util.Map.Entry;
+import java.util.stream.Collectors;
 
 import model.TouristPlace;
 
@@ -14,8 +13,12 @@ public class MapOperations {
 		return touristMap;
 	}
 	public Map sortRandomly(TouristPlace places) {
-		
-		return add(places);
+		Map<String,TouristPlace> touristMap = new HashMap<String,TouristPlace>();
+		 List<Entry<String, TouristPlace>> list = convertToList(touristMap);
+		 Collections.shuffle(list);
+		 Map<String,TouristPlace> touristMap1 = new HashMap<String,TouristPlace>();
+		 for (Entry i : list) touristMap1.put(i.getKey(),i);
+		 return touristMap1;
 	}
 	public Map sortInEntryOrder(Map<String, Object> mapobj) {
 		return touristMap;
@@ -34,4 +37,11 @@ public class MapOperations {
 		touristMap.remove(places.getName());
 		return  touristMap;
 	}
+	
+	 public static<K,V> List<Map.Entry<K,V>> convertToList(Map<K,V> map)
+	    {
+	        return map.entrySet()
+	                .stream()
+	                .collect(Collectors.toList());
+	    }
 }

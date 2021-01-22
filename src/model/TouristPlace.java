@@ -1,5 +1,5 @@
 package model;
-public class TouristPlace implements Comparable<TouristPlace>{
+public class TouristPlace {
 	String name;
 	String destination;
 	String rank;
@@ -27,11 +27,7 @@ public class TouristPlace implements Comparable<TouristPlace>{
 	public void setRank(String rank) {
 		this.rank = rank;
 	}
-	@Override
-	public int compareTo(TouristPlace o) {
-		return this.getDestination().compareTo(o.getDestination());
-		
-	}
+	
 	
 }
 
