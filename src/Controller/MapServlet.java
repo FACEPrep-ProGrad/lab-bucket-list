@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -17,6 +18,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.TouristPlace;
 import service.ListOperations;
+import service.MapOperations;
 
 
 @WebServlet(urlPatterns= {"/map"})
@@ -36,10 +38,16 @@ public class MapServlet extends HttpServlet {
 		String remove = request.getParameter("delete");
 		String reset = request.getParameter("reset");
 			
+		MapOperations map = new MapOperations();
+        TouristPlace places = new TouristPlace(name,destination,rank);
+		
+		
+		Map<String,Object> mapobj = new HashMap<String, Object>();
+		
 		if(add!=null) {
 			// call the add method and store the return value in a map variable
-			
-			request.setAttribute("bucketList", /*return variable */);
+			mapobj= map.add(places); 
+			request.setAttribute("bucketList", mapobj);
 			request.setAttribute("message", "user added successfully");
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/map.jsp");
 			rd.forward(request, response);
@@ -47,7 +55,8 @@ public class MapServlet extends HttpServlet {
 
 		if(remove!=null) {
 			// call the remove method and store the return value in a map variable
-			request.setAttribute("bucketList", /*return variable */);
+			mapobj=map.remove(places);
+			request.setAttribute("bucketList", mapobj);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/map.jsp");
 			rd.forward(request, response);
 		}
@@ -55,28 +64,32 @@ public class MapServlet extends HttpServlet {
 		
 		if(sortRandom!=null) {
 			// call the sortRandomly method and store the return value in a map variable
-			request.setAttribute("bucketList",/*return variable */);
+			mapobj=map.sortRandomly(places);
+			request.setAttribute("bucketList",mapobj);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/map.jsp");
 			rd.forward(request, response);
 		}
 
 		if(sortInEntryOrder!=null) {
 			// call the sortInEntryOrder and store the return value in a map variable
-			request.setAttribute("bucketList", /*return variable */);
+			mapobj=map.sortInEntryOrder(mapobj);
+			request.setAttribute("bucketList", mapobj);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/map.jsp");
 			rd.forward(request, response);
 		}
 		if(sortAlphabetically!=null) {
 			
 			// call the sort Alphabetically and store the return value in a map variable
-			request.setAttribute("bucketList",/*return variable */);
+			mapobj= map.sortAlphabetically(mapobj);
+			request.setAttribute("bucketList",mapobj);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/map.jsp");
 			rd.forward(request, response);
 		}
 
 		if(reset!=null) {	
 			// call the reset method and store the return value in a map variable
-			request.setAttribute("bucketList", /*return variable */);
+			mapobj=(Map<String, Object>) map.reset(places);
+			request.setAttribute("bucketList", mapobj);
 			RequestDispatcher rd=this.getServletContext().getRequestDispatcher("/WEB-INF/views/map.jsp");
 			rd.forward(request, response);
 		}
